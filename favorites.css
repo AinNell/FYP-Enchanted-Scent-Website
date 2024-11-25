@@ -1,0 +1,104 @@
+/* General Styles */
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    background-color: #f7f1e5;
+    color: #5a4636;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d7b89a;
+    padding: 15px 20px;
+    color: #5a4636;
+}
+
+.brand-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #5a4636;
+    cursor: pointer;
+}
+
+.menu-btn {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #5a4636;
+    border: 1px solid #d7b89a;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu-btn:hover {
+    background-color: #e8d7c4;
+}
+
+.favourites-container {
+    max-width: 1000px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #5a4636;
+}
+
+.favorites-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.perfume-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.2s;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #e8d7c4;
+}
+
+.perfume-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.perfume-info {
+    padding: 10px;
+}
+
+.perfume-info h3 {
+    font-size: 1.2rem;
+    color: #5a4636;
+    margin: 10px 0;
+}
+
+.remove-btn {
+    padding: 8px 16px;
+    background-color: #b07a5d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: #a0694c;
+}
+
+.perfume-card:hover {
+    transform: scale(1.05);
+}

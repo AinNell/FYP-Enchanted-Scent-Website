@@ -1,0 +1,241 @@
+/* General Styles */
+body {
+    font-family: 'Times New Romans', serif;
+    background-color: #f6f1eb; /* Softer light brown background */
+    color: #3a3a3a; /* Dark grey text for contrast */
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between; /* This will position the menu button on the left and title on the right */
+    background-color: #d8c6b8; /* Softer brown for the header */
+    padding: 15px 30px;
+    align-items: center;
+}
+
+header .menu-btn {
+    background-color: #b68e6a; /* Softer brown button */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+header .menu-btn:hover {
+    background-color: #a07e5a; /* Slightly darker on hover */
+}
+
+header .header-title {
+    font-size: 2.5em;
+    color: #3a3a3a;
+    font-weight: normal;
+    margin: 0;
+}
+
+/* User Manual Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50;
+    left: 50;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    position: center;
+}
+
+.user-manual button {
+    background: linear-gradient(145deg, #9e7b5b, #c5a57a); /* Gradient background */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3em;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    margin-top: 5px; /* Space between button and heading */
+}
+
+/* Close Button Styling */
+.close {
+    font-size: 2.5em; /* Increase font size for better visibility */
+    color: #fff; /* White color for contrast */
+    background-color: #b68e6a; /* Softer brown background to stand out */
+    border-radius: 50%; /* Make it round */
+    width: 40px; /* Set fixed width */
+    height: 40px; /* Set fixed height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.close:hover {
+    background-color: #a07e5a; /* Slightly darker brown on hover */
+    color: #fff; /* Keep text white on hover */
+    transform: scale(1.1); /* Slight scale-up effect on hover */
+}
+
+
+.modal-body h3 {
+    color: #b68e6a;
+}
+
+/* Perfume Details Section */
+.perfume-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.perfume-image img {
+    max-width: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.perfume-details {
+    max-width: 600px;
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.perfume-details h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.perfume-details .quantity {
+    font-size: 1.5em;
+    color: #b68e6a;
+}
+
+.fav-button button {
+    background-color: #b68e6a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.fav-button button:hover {
+    background-color: #a07e5a;
+}
+
+/* Suggestions (Carousel) */
+.suggestions h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.carousel-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.carousel {
+    position: relative;
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carousel-item {
+    flex: 0 0 220px;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    ;
+}
+
+.carousel-item img {
+    width: 100%; /* Ensure the image width fills the carousel item */
+    height: 200px; /* Set a fixed height for uniformity */
+    object-fit: cover; /* Ensures images fill the space without distortion */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item p {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #3a3a3a;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 2em;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 0;
+}
+
+.carousel-control.next {
+    right: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-box {
+        flex-direction: column;
+    }
+
+    .carousel-item {
+        flex: 0 0 100%;
+    }
+
+    .carousel-item img {
+        height: 150px; /* Adjust image height for smaller screens */
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Perfume</title>
+    <link rel="stylesheet" href="delete_perfume.css">
+</head>
+<body>
+    <div class="form-box">
+        <h1>Delete a Perfume</h1>
+        <form action="delete_perfume.php" method="POST">
+            <label for="perfumeSelect">Select Perfume to Delete:</label>
+            <select id="perfumeSelect" name="perfume_id">
+                <!-- PHP to populate perfumes from the database -->
+                <?php
+                // Connect to database
+                $conn = new mysqli("localhost", "username", "password", "ec");
+                $result = $conn->query("SELECT perfume_id, perfume_name FROM perfumes");
+
+                while ($row = $result->fetch_assoc()) {
+                    echo "<option value='{$row['perfume_id']}'>{$row['perfume_name']}</option>";
+                }
+
+                $conn->close();
+                ?>
+            </select>
+            <button type="submit">Delete Perfume</button>
+        </form>
+
+        <div class="password-links">
+            <a href="adminmenu.html">Back to Menu</a>
+        </div>
+    </div>
+</body>
+</html>

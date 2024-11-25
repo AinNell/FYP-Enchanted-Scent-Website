@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Perfume Description</title>
+    <link rel="stylesheet" href="modify.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-box">
+            <h1>Modify Perfume Description</h1>
+            <form action="modify_perfume.php" method="POST">
+                <label for="perfumeSelect">Select Perfume to Modify:</label>
+                <select id="perfumeSelect" name="perfume_name" required>
+                    <!-- PHP to populate perfumes from the database -->
+                    <?php
+                    // Connect to database
+                    $conn = new mysqli("localhost", "username", "password", "ec");
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
+
+                    $result = $conn->query("SELECT perfume_id, perfume_name FROM perfumes");
+
+                    // Check if the result has rows
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<option value='{$row['perfume_id']}'>{$row['perfume_name']}</option>";
+                        }
+                    } else {
+                        echo "<option>No perfumes available</option>";
+                    }
+
+                    $conn->close();
+                    ?>
+                </select>
+
+                <label for="newDescription">New Description:</label>
+                <textarea id="newDescription" name="new_description" required placeholder="Enter new description here..."></textarea>
+
+                <button type="submit">Modify Description</button>
+            </form>
+            
+            <!-- Back to Menu link below the button -->
+            <div class="password-links">
+                <a href="adminmenu.html">Back to Menu</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

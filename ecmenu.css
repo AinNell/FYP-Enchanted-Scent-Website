@@ -1,0 +1,294 @@
+/* General Styles for the Menu Page */
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #f5dac4; /* Softer light brown background */
+    color: #030303; /* Dark grey text for contrast */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #f6f1eb; /* Dark brown header background */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    color: #3a3a3a; /* Dark grey text for contrast */
+    font-size: 40px;
+}
+
+/* Styling for the User Manual Button */
+.header-left {
+    margin-top: -20px; /* Adds space between the title and the button */
+}
+
+/* User Manual Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 20;
+    left: 50;
+    width: 100%;
+    height: 100%;
+    padding: -70px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: left;
+    align-items: left;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
+    position: center;
+}
+
+.user-manual {
+    background-color: #f6f1eb; /* Light brown background */
+    padding: 20px;
+    border-radius: 75px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.user-manual button {
+    background: linear-gradient(145deg, #9e7b5b, #c5a57a); /* Gradient background */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3em;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    margin-top: 5px; /* Space between button and heading */
+}
+
+/* Hover Effect for the User Manual Button */
+.user-manual button:hover {
+    background: linear-gradient(145deg, #c5a57a, #9e7b5b); /* Reversed gradient on hover */
+    transform: scale(1.1); /* Slightly larger size on hover */
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3), -8px -8px 20px rgba(255, 255, 255, 0.3); /* More prominent shadow */
+}
+
+/* Centering and Styling the Search Box */
+.header-center {
+    margin-top: -105px; /* Add space between the button and the search box */
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.search-container input {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-container button {
+    background: linear-gradient(145deg, #7a5c42, #e9a86f);
+    color: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    background-color: #f6f1eb;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #7a5c42; /* Darker brown on hover */
+}
+
+/* Right Header Section */
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: -40px;
+}
+
+.header-right a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #9e7b5b;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Playfair Display', sans-serif; /* Ensure consistent font in links */
+}
+
+.header-right a:hover {
+    background-color: #7a5c42; /* Darker brown on hover */
+}
+
+/* Right Side (Survey and Favourite Buttons) */
+.survey-button,
+.favourite-button {
+    background: linear-gradient(145deg, #9e7b5b, #c5a57a);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3em;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.survey-button:hover,
+.favourite-button:hover {
+    background: linear-gradient(145deg, #9e7b5b, #c5a57a); /* Gradient background */    
+    transform: scale(1.1); /* Slightly larger size on hover */
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3), -8px -8px 20px rgba(255, 255, 255, 0.3); /* More prominent shadow */
+}
+
+/* Centered Search Bar */
+.search-bar {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    width: 50%;
+}
+
+/* Brand Layout */
+.brand-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 20px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.brand {
+    background-color: #c5a57a; /* Light brown background for brand boxes */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    text-align: center;
+    position: center;
+}
+
+.brand img {
+    height: 100px; /* Set a uniform height */
+    object-fit: contain; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space below the image */
+}
+
+.brand {
+    text-align: center; /* Center-align brand items */
+    margin: 20px; /* Add spacing between brands */
+    flex: 1; /* Allow items to share available space */
+    position: center;
+}
+
+.brand-info {
+    text-align: center; /* Center-align brand items */
+    position: center;
+    font-size: 1.5em;
+}
+
+
+/* Perfume List - Ensure vertical stacking */
+.perfume-list {
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    padding: 10px 0; /* Vertical padding */
+    width: 100%; /* Ensure full width of the parent */
+    gap: 10px; /* Add spacing between items */
+}
+
+.perfume-item {
+    min-width: 120px; /* Minimum width for each perfume item */
+    text-align: center; /* Center text */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width for each item */
+    margin-bottom: 20px; /* Space between perfume items */
+}
+
+.perfume-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.perfume-item h4 {
+    color: #9e7b5b; /* Light brown color for perfume names */
+    margin: 10px 0;
+    font-family: 'Playfair Display', sans-serif; /* Match font family */
+}
+
+.perfume-item p {
+    color: #7a6a53; /* Slightly darker beige for description text */
+    font-size: 0.9em;
+    text-align: center; /* Center-align description text */
+}
+
+.perfume-item .additionalInfo {
+    text-align: center; /* Center-align additional info */
+    margin-top: 10px; /* Space between description and additional info */
+}
+
+/* Navigation Buttons (for vertical scrolling) */
+.nav-buttons {
+    display: block; /* Ensure the buttons are also stacked vertically */
+    margin-top: 20px;
+    text-align: center; /* Center the buttons */
+}
+
+.nav-buttons button {
+    background-color: #9e7b5b; /* Light brown background for buttons */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.nav-buttons button:hover {
+    background-color: #7a5c42; /* Darker brown for hover */
+}
+
+/* Additional styles for responsive design (e.g., mobile view) */
+@media (max-width: 768px) {
+    .brand-list {
+        flex-direction: column; /* Stack brands vertically on small screens */
+        align-items: center;
+    }
+
+    .perfume-list {
+        flex-direction: column; /* Stack perfumes vertically */
+    }
+}

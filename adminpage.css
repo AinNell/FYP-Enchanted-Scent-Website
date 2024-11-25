@@ -1,0 +1,112 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #d4af7f, #c19161); /* Elegant gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.9); /* Light semi-transparent box */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    font-size: 28px;
+    color: #4f3b2f; /* Dark brown color */
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 16px;
+    color: #4f3b2f; /* Darker brown */
+    margin-bottom: 8px;
+    text-align: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #d8b89f; /* Light brown border */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #f1e6d4; /* Light cream background */
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #cfa58d; /* Darker brown on focus */
+    background-color: #fff; /* White background on focus */
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: #4f3b2f; /* Dark brown button */
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #6e4b33; /* Darker brown on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.password-links {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #4f3b2f;
+}
+
+.password-links a {
+    color: #4f3b2f; /* Dark brown text for links */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.password-links a:hover {
+    text-decoration: underline;
+    color: #6e4b33; /* Darker brown on hover */
+}
+
+.password-links span {
+    margin: 0 8px;
+    color: #4f3b2f;
+}
+

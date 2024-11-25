@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EC Menu</title>
+    <link rel="stylesheet" href="ecmenu.css">
+    <style>
+        /* Brand and Perfume Section Styling */
+        .brand img {
+            height: 100px; /* Set a uniform height */
+            object-fit: contain; /* Maintain aspect ratio */
+            margin-bottom: 10px; /* Space below the image */
+            cursor: pointer;
+        }
+
+        .brand {
+            text-align: center; /* Center-align brand items */
+            margin: 20px; /* Add spacing between brands */
+        }
+
+        /* Perfume List Display - Vertical Layout */
+        .perfume-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Grid layout with responsive columns */
+            gap: 20px; /* Space between the boxes */
+            padding: 10px; /* Padding around the list */
+        }
+
+        .perfume-item {
+            background-color: #f9f9f9; /* Light background color */
+            border: 1px solid #ddd; /* Border around each box */
+            padding: 20px; /* Padding inside the box */
+            text-align: center; /* Center the text */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: transform 0.3s ease; /* Smooth transform on hover */
+        }
+
+        .perfume-item:hover {
+            transform: scale(1.05); /* Slightly scale up the box on hover */
+        }
+
+        .perfume-item img {
+            width: 100%; /* Make the image fit the box width */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 5px; /* Rounded corners for images */
+            margin-bottom: 10px; /* Space below the image */
+        }
+
+        .perfume-item p {
+            font-weight: bold;
+            font-size: 16px; /* Larger font for perfume names */
+        }
+
+        /* Buttons */
+        .carousel-btn {
+            background-color: #aaa; /* Button background */
+            border: none; /* Remove border */
+            color: white; /* Button text color */
+            padding: 10px; /* Button padding */
+            cursor: pointer; /* Pointer cursor */
+        }
+
+        .carousel-btn:hover {
+            background-color: #888; /* Darker background on hover */
+        }
+
+        /* User Manual Button Styling */
+        .user-manual button {
+            background: linear-gradient(90deg, #7a5c42, #e9a86f); /* Gradient background */
+            color: white;
+            padding: 15px 40px; /* Increase padding for a larger button */
+            border: none;
+            border-radius: 30px; /* Rounded corners for a pill shape */
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s; /* Smooth transitions */
+            margin-top: 20px; /* Space between button and heading */
+        }
+
+        /* Hover Effect for User Manual Button */
+        .user-manual button:hover {
+            background: linear-gradient(90deg, #f0b684, #7a5c42); /* Reverse gradient on hover */
+            transform: scale(1.05); /* Slightly scale up on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+        }
+
+        /* Focus effect for accessibility */
+        .user-manual button:focus {
+            outline: none; /* Remove default outline */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Glow effect on focus */
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center; /* Center the search box and button */
+            align-items: center; /* Align vertically */
+            margin-top: 20px; /* Space from the top */
+        }
+
+        #search-box {
+            width: 260px; /* Small length for the search box */
+            padding: 8px; /* Add some padding */
+            font-size: 16px; /* Make the font readable */
+            border: 1px solid #ccc; /* Add a light border */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        #search-btn {
+            padding: 8px 16px; /* Padding around the text */
+            font-size: 16px; /* Matching font size */
+            background-color: #7a5c42; /* Darker brown on hover */
+            color: white; /* Button text color */
+            border: none;
+            border-radius: 5px; /* Rounded corners for the button */
+            cursor: pointer; /* Pointer cursor on hover */
+            margin-left: 10px; /* Space between the search box and button */
+        }
+
+        #search-btn:hover {
+            background-color: #7a5c42; /* Darker brown on hover */
+        }
+
+        /* User Manual Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333; /* Dark background */
+            color: white; /* White text */
+            padding: 20px 0; /* Padding around the footer */
+            text-align: center; /* Center the footer content */
+        }
+
+        .footer-btn {
+            margin: 10px; /* Space between buttons */
+            padding: 10px 20px; /* Button padding */
+            background-color: #7a5c42; /* Matching button color */
+            color: white;
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor */
+        }
+
+        .footer-btn:hover {
+            background-color: #5e3f29; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Enchanted Scents</h1>
+    
+        <!-- User Manual Button -->
+        <div class="header-left">
+            <div class="user-manual">
+                <button id="openManualBtn">CLICK HERE</button>
+            </div>
+        </div>
+    
+        <!-- Search Box Section -->
+        <div class="header-center">
+            <div class="search-container">
+                <input type="text" id="search-box" placeholder="Search for perfumes...">
+                <button id="search-btn" onclick="searchPerfumes()">Search</button>
+            </div>
+        </div>
+    
+        <!-- Right Header Section -->
+        <div class="header-right">
+            <a href="favorites.html" class="footer-btn">♡ Favourite</a>
+            <a href="adminpage.html" class="footer-btn">Admin Login</a>
+        </div>
+    </header>
+    
+      
+
+<!-- User Manual Modal -->
+<div id="userManualModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <h2>User Manual</h2>
+        <div class="modal-body">
+            <ul>
+                <li>Click on a brand to view details about their perfumes.</li>
+                <li>Scroll vertically through the list of perfumes.</li>
+                <li>Click on a perfume to learn more about it.</li>
+                <li>For using the search bar to search the perfume you are looking for, Click on the brand first, then type the perfume name in the search bar, and then Click "Search".</li>
+                <li>To see your favorites perfume, you can go through the website Favourite Page by Clicking the Favourite button on the website top right</li>
+            </ul>
+            <h3>"Survey" and "Review" form</h3>
+                <ul><li>At the bottom of this website, there are a "Survey" and "Review" form </li>
+                    <li>The "Survey" form is for us to collect what your mostly preference in perfume </li>
+                    <li>It will be our greatest pleasure to hear anything from you in our "Review" form below if you had tried any of the perfume in this website</li>
+                </ul>
+            <h3>Coming Soon</h3>
+            <ul>
+                <li>More Malaysian local perfume brand to be add in this website</li>
+            </ul>
+            <h3>Enjoy your local scent journey!</h3>
+        </div>
+    </div>
+</div>
+
+    <!-- Brand Section -->
+    <section class="brands">
+        <div class="brand-list">
+            <div class="brand" onclick="showBrandInfo('Rirana Parfume')">
+                <img src="riranalogo.jpg" alt="Rirana Logo">
+                <h3>Rirana Parfume</h3>
+            </div>
+            <div class="brand" onclick="showBrandInfo('Malay Perfumery')">
+                <img src="malaypefumerylogo.jpeg" alt="Malay Perfumery Logo">
+                <h3>Malay Perfumery</h3>
+            </div>
+            <div class="brand" onclick="showBrandInfo('Medin Fragrance')">
+                <img src="medinlogo.png" alt="Medin Fragrance Logo">
+                <h3>Medin Fragrance</h3>
+            </div>
+            <div class="brand" onclick="showBrandInfo('Marina Rituals')">
+                <img src="marinalogo.jpeg" alt="Marina Rituals Logo">
+                <h3>Marina Rituals</h3>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Brand Info Section -->
+    <section id="brand-info" class="brand-info">
+        <h2 id="brand-title"></h2>
+        <p id="brand-description"></p>
+        <p id="brand-additional-info"></p>
+
+        <!-- Perfume List -->
+        <div class="perfume-list" id="perfume-list">
+            <!-- Perfumes will be populated here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Enchanted Scents | Email: info@enchantedscents.com</p>
+        <a href="survey.html" class="footer-btn">Survey</a>
+        <a href="review.html" class="footer-btn">Review</a>
+    </footer>
+
+    <script>
+        const brands = {
+            "Rirana Parfume": {
+                description: "Explore the exquisite scents from Rirana.",
+                additionalInfo: "Freshly handcrafted the bottle and perfume in the small lab and always believe in the quality not a quantity. Perfumery is like a painting, beaker is the canvas, and essential oil is the paint, the perfume is an art translated from imagination and memory.",
+                image: "riranalogo.jpg",
+                perfumes: [
+                    { name: "Roasted Chestnut", img: "roastedchestnut.png" },
+                    { name: "Black Wood", img: "blackwood.png" },
+                    { name: "Vanilla Tobacco", img: "vanillatobacco.png" },
+                    { name: "Spices Oud", img: "spicesoud.png" },
+                    { name: "Honey Amber", img: "honeyamber.png" },
+                    { name: "Iris Ambrette", img: "irisambrette.png" },
+                    { name: "Oriental Orchid", img: "orientalorchid.png" },
+                    { name: "Salty Citrus", img: "saltycitrus.png" },
+                    { name: "Plum Rose", img: "plumrose.png" },
+                    { name: "Wood Cereal", img: "woodcereal.png" },
+                    { name: "Coconut Nanas", img: "coconutnanas.png" },
+                    { name: "Cherry on Top", img: "cherryontop.png" },
+                    { name: "Tonka Nutmeg", img: "tonkanutmeg.png" },
+                    { name: "Herb & Wood", img: "herbandwood.png" },
+                    { name: "Vanilla Tea", img: "vanillatea.png" },
+                    { name: "Apple Nanas", img: "applenanas.png" },
+                    { name: "Mawar Cashmere", img: "mawarcashmere.png" },
+                    { name: "Golden Saffron", img: "goldensaffron.png" },
+                    { name: "Raspberry Lychee", img: "raspberrylychee.png" },
+                ]
+            },
+
+            "Malay Perfumery": {
+                description: "Discover the unique fragrances of Malay Perfumery.",
+                additionalInfo: "Malay Perfumery is an artisan fragrance house specializing in scents of the Malay Archipelago evoking the heritage of ethnic Malays combined with French perfumery techniques. Our names, scents, and materials are authentically designed at the heart of the Malay world, Malaysia!",
+                image: "malaypefumerylogo.jpeg",
+                perfumes: [
+                    { name: "Fatimah", img: "fatimah.png" },
+                    { name: "Fleur de Rampai", img: "fleurderampai.png" },
+                    { name: "Hang Li Po", img: "hanglipo.png" },
+                    { name: "Kesidang", img: "kesidang.png" },
+                    { name: "Mahsuri 2024", img: "mahsuri2024.png" },
+                    { name: "Melur", img: "melur.png" },
+                    { name: "Merong Mahawangsa", img: "merongmahawangsa.png" },
+                    { name: "Santubong", img: "santubong.png" },
+                    { name: "Shahada", img: "shahada.png" },
+                    { name: "Teja", img: "teja.png" },
+                    { name: "Winstedt", img: "winstedt.png" },
+                    { name: "Zheng He 2024", img: "zhenghe2024.png" }
+                ]
+            },
+            "Medin Fragrance": {
+                description: "Delight in the luxurious scents of Medin Fragrance.",
+                additionalInfo: "#MakeMalaysiaFundamentalGreatAgain. Started by making inspired perfume to be making their own creativity of perfume. Their 1st series is the Kuala Lumpur series, involving the places around Malaysia capital city Kuala Lumpur. And now they're currently they release the Srikandi Series to the public.",
+                image: "medinlogo.png",
+                perfumes: [
+                    { name: "Srikandi Kesuma", img: "kesuma.png" },
+                    { name: "Srikandi Nona", img: "nona.png" },
+                    { name: "Srikandi Masmera", img: "masmera.png" },
+                    { name: "Srikandi Purnama", img: "purnama.png" },
+                    { name: "Srikandi Tun Teja", img: "tunteja.png" },
+                    { name: "Srikandi Kirana", img: "kirana.png" }
+                ]
+            },
+
+            "Marina Rituals": {
+                description: "Experience the enchanting aromas of Marina Rituals.",
+                additionalInfo: "Crafted from naturals botanicals, nature-inspired allure. Carefully curated perfume collection of iconic moments & irresistible mocktails. Infused with Phero-Musk, each fragrance uniquely unfolds on you - adding a touch of confidences to every step.",
+                image: "marinalogo.jpeg",
+                perfumes: [
+                    { name: "Fuji Apple", img: "fuji.png" },
+                    { name: "Blanc Fairy", img: "blancfairy.png" },
+                    { name: "Vanilla Chocolate", img: "vanillachocolate.png" },
+                    { name: "Femme Fatale", img: "femmefatale.png" },
+                    { name: "Kohi Vanilla", img: "kohivanilla.png" },
+                    { name: "Melont + Amber", img: "melonamber.png" },
+                    { name: "Pink + Champagne", img: "pinkchampange.png" },
+                    { name: "Nasty Gourmand", img: "nastygourmand.png" },
+                    { name: "God of Gourmand", img: "godofgourmand.png" },
+                    { name: "Apple + Whipped Cream", img: "applewhippedcream.png" },
+                    { name: "Mojito Sunset Tea", img: "mojitosunsettea.png" },
+                    { name: "Mango Ice", img: "mangoice.png" },
+                    { name: "Raspberry + Sugarcake", img: "raspberrysugarcake.png" },
+                    { name: "Sea + Salt Bergamot", img: "seasaltbergamot.png" },
+                    { name: "Bad Boy Oud", img: "badboyoud.png" },
+                    { name: "Wabi Sabi", img: "wabisabi.png" },
+                    { name: "Midnight Kiss in Paris", img: "midnightkissinparis.png" }
+                ]
+            }
+        };
+
+        // Function to show the selected brand's details
+        function showBrandInfo(brandName) {
+            const brand = brands[brandName];
+            document.getElementById("brand-title").textContent = brandName;
+            document.getElementById("brand-description").textContent = brand.description;
+            document.getElementById("brand-additional-info").textContent = brand.additionalInfo;
+
+            const perfumeListContainer = document.getElementById("perfume-list");
+            perfumeListContainer.innerHTML = ""; // Clear existing perfume list
+
+            // Create perfume list items dynamically
+            brand.perfumes.forEach(perfume => {
+                const perfumeItem = document.createElement("div");
+                perfumeItem.classList.add("perfume-item");
+
+                const perfumeImage = document.createElement("img");
+                perfumeImage.src = perfume.img;
+                perfumeImage.alt = perfume.name;
+
+                const perfumeName = document.createElement("p");
+                perfumeName.textContent = perfume.name;
+
+                perfumeItem.appendChild(perfumeImage);
+                perfumeItem.appendChild(perfumeName);
+                perfumeItem.onclick = function() {
+                    window.location.href = `${perfume.name.toLowerCase().replace(/\s+/g, '')}.html`; // Navigates to the perfume page
+                };
+
+                perfumeListContainer.appendChild(perfumeItem);
+            });
+        }
+
+        // Search function to filter perfumes
+        function searchPerfumes() {
+            const query = document.getElementById("search-box").value.toLowerCase();
+            const allPerfumes = document.querySelectorAll(".perfume-item");
+
+            allPerfumes.forEach(perfume => {
+                const perfumeName = perfume.querySelector("p").textContent.toLowerCase();
+                if (perfumeName.includes(query)) {
+                    perfume.style.display = "block"; // Show if matches
+                } else {
+                    perfume.style.display = "none"; // Hide if doesn't match
+                }
+            });
+        }
+
+        // User Manual Modal functionality
+        const modal = document.getElementById("userManualModal");
+        const openManualBtn = document.getElementById("openManualBtn");
+        const closeModalBtn = document.getElementById("closeModalBtn");
+
+        openManualBtn.onclick = function() {
+            modal.style.display = "block"; // Show the modal
+        }
+
+        closeModalBtn.onclick = function() {
+            modal.style.display = "none"; // Hide the modal
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none"; // Close if clicked outside the modal
+            }
+        }
+    </script>
+
+</body>
+</html>

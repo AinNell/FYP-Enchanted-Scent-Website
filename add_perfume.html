@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Perfume</title>
+    <link rel="stylesheet" href="add_perfume.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <div class="form-box">
+        <h1>Add a New Perfume</h1>
+        <form action="add_perfume.php" method="POST">
+            <label for="perfumeName">Perfume Name:</label>
+            <input type="text" id="perfumeName" name="perfume_name" required>
+
+            <label for="brand_name">Brand:</label>
+            <select id="brand_name" name="brand_name">
+                <option value="">-- Select Brand --</option>
+                <option value="Rirana Parfume">Rirana Parfume</option>
+                <option value="Malay Perfumery">Malay Perfumery</option>
+                <option value="Medin Fragrance">Medin Fragrance</option>
+                <option value="Marina Rituals">Marina Rituals</option>
+            </select>
+
+            <label for="notes">Perfume Notes:</label>
+            <input type="text" id="notes" name="perfume_notes" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <button type="submit">Add Perfume</button>
+        </form>
+
+        <div class="password-links">
+            <a href="adminmenu.html">Back to Menu</a>
+        </div>
+    </div>
+</body>
+</html>

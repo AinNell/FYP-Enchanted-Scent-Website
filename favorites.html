@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Perfumes - Enchanted Scents</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="favorites.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <h1 class="brand-title">Enchanted Scents</h1>
+        <button class="menu-btn" onclick="window.location.href='ecmenu.html'">MENU</button>
+    </header>
+
+    <!-- Main Content -->
+    <div class="favourites-container">
+        <h2>Your Favorite Perfumes</h2>
+        <div id="favoritesList" class="favorites-list"></div>
+    </div>
+
+    <script>
+        // Function to load favorites from localStorage
+        function loadFavorites() {
+            const favoritesList = document.getElementById("favoritesList");
+            const favorites = JSON.parse(localStorage.getItem("favourites")) || [];
+
+            if (favorites.length === 0) {
+                favoritesList.innerHTML = "<p>You have no favorite perfumes yet.</p>";
+                return;
+            }
+
+            favoritesList.innerHTML = ''; // Clear previous content
+
+            // Create perfume card for each favorite
+            favorites.forEach(perfume => {
+                const perfumeCard = document.createElement("div");
+                perfumeCard.className = "perfume-card";
+
+                perfumeCard.innerHTML = `
+                    <img src="${perfume.image}" alt="${perfume.name}">
+                    <div class="perfume-info">
+                        <h3>${perfume.name}</h3>
+                        <button class="remove-btn" onclick="removeFromFavorites('${perfume.name}')">Remove</button>
+                    </div>
+                `;
+                favoritesList.appendChild(perfumeCard);
+            });
+        }
+
+        // Function to remove perfume from favorites
+        function removeFromFavorites(perfumeName) {
+            let favorites = JSON.parse(localStorage.getItem("favourites")) || [];
+            favorites = favorites.filter(perfume => perfume.name !== perfumeName);
+            localStorage.setItem("favourites", JSON.stringify(favorites));
+            loadFavorites();
+            alert(perfumeName + " has been removed from favorites.");
+        }
+
+        // Load favorites when the page loads
+        window.onload = loadFavorites;
+    </script>
+
+</body>
+</html>

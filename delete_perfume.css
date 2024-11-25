@@ -1,0 +1,123 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #F5E0C3; /* Light brown background color */
+    color: #333;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full view height */
+}
+
+/* Form Box Styling */
+.form-box {
+    background-color: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Header Styling */
+h1 {
+    font-size: 2.5rem;
+    color: #9e7b5b;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Form Elements Styling */
+form {
+    width: 100%;
+}
+
+/* Label Styling */
+label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Select Box Styling */
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus Effect */
+select:focus {
+    border-color: #9e7b5b; /* Light brown border */
+    outline: none;
+}
+
+/* Button Styling */
+button {
+    background-color: #9e7b5b;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover and Active Button States */
+button:hover {
+    background-color: #7a5c42;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(1);
+}
+
+/* Password Links Section */
+.password-links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.password-links a {
+    color: #9e7b5b;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.password-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .form-box {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}

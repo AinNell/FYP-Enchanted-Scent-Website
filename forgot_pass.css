@@ -1,0 +1,110 @@
+/* forgot_password.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #e8c1a1, #8f6e4f);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    position: relative;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+h1 {
+    font-size: 2.8em;
+    color: #444;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 12px 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+input[type="email"], input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    margin-top: 12px;
+    border: 2px solid #d4d4d4;
+    border-radius: 12px;
+    font-size: 1em;
+    background-color: #f9f9f9;
+    transition: 0.3s ease;
+    box-sizing: border-box; /* Ensures consistent sizing */
+}
+
+input[type="email"]:focus {
+    border-color: #8f6e4f;
+    background-color: #fff;
+    outline: none;
+}
+
+input[type="submit"] {
+    background: linear-gradient(45deg, #8f6e4f, #e8c1a1);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(45deg, #e8c1a1, #8f6e4f);
+    transform: translateY(-4px);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+.password-links {
+    margin-top: 20px;
+}
+
+.password-links a {
+    color: #8f6e4f;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.password-links a:hover {
+    color: #7a5c42;
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 30px;
+    }
+}

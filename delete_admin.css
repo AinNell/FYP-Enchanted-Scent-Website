@@ -1,0 +1,59 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f1e1; /* Light brown background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 50%;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background for the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #c1a08d; /* Light brown border */
+}
+
+h1 {
+    color: #8b5d3d; /* Darker brown for the heading */
+}
+
+p {
+    font-size: 18px;
+    margin: 20px 0;
+    color: #7a5c44; /* Slightly lighter brown for the text */
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.confirm-btn, .cancel-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.confirm-btn {
+    background-color: #8b5d3d; /* Light brown color for the confirm button */
+}
+
+.confirm-btn:hover {
+    background-color: #704218; /* Darker brown when hovered */
+}
+
+.cancel-btn {
+    background-color: #d2b39f; /* Lighter brown for the cancel button */
+}
+
+.cancel-btn:hover {
+    background-color: #b89a80; /* Slightly darker brown on hover */
+}

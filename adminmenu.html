@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Menu</title>
+    <link rel="stylesheet" href="adminmenu.css">
+    <style>
+        /* Header styling */
+        header {
+            display: flex;
+            justify-content: space-between; /* This will position the menu button on the left and title on the right */
+            background-color: #b29b89; /* Softer brown for the header */
+            padding: 15px 30px;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #4f3b2f; /* Dark brown color */
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #6b432e; /* Dark brown color to match the theme */
+            margin: 40px 0; /* Adds some spacing around the title */
+            text-align: center; /* Centers the title */
+        }
+
+        header .header-title {
+            font-size: 2.5em;
+            color: #edeaea;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        /* Add Admin Button in the top-right corner */
+        .add-admin-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #9e7b5b; /* Light brown background for button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .add-admin-btn:hover {
+            background-color: #7a5c42; /* Darker brown on hover */
+        }
+
+        /* Button container layout */
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .button-container form {
+            display: flex;
+            justify-content: center;
+        }
+
+        .button-container button {
+            background-color: #9e7b5b;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            width: 200px;
+        }
+
+        .button-container button:hover {
+            background-color: #7a5c42;
+        }
+
+        /* Mobile responsive design */
+        @media screen and (max-width: 768px) {
+            .button-container {
+                grid-template-columns: 1fr; /* Stack buttons on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1 class="header-title">Enchanted Scents</h1>
+        </div>
+    </header>
+
+    <!-- Back to Website Button -->
+    <a href="ecmenu.html" class="add-admin-btn">Back To Website</a>
+
+    <h2>ADMIN MENU</h2>
+
+    <!-- Buttons for navigating to perfume management pages -->
+    <div class="button-container">
+        <form action="surveyrecord.php" method="GET">
+            <button type="submit">View Survey Record</button>
+        </form>
+
+        <form action="searchperfume.html" method="GET">
+            <button type="submit">Search Perfume</button>
+        </form>
+
+        <form action="add_perfume.html" method="GET">
+            <button type="submit">Add Perfume</button>
+        </form>
+
+        <form action="delete_perfume.php" method="GET">
+            <button type="submit">Delete Perfume</button>
+        </form>
+
+        <form action="modify_perfume.php" method="GET">
+            <button type="submit">Modify Perfume Description</button>
+        </form>
+
+        <form action="reviewrecord.php" method="GET">
+            <button type="submit">Review Record</button>
+        </form>
+
+        <form action="add_admin.html" method="GET">
+            <button type="submit">Add Admin</button>
+        </form>
+
+        <form action="view_admin.php" method="GET">
+            <button type="submit">View Admin / Delete Admin</button>
+        </form>
+
+        <form action="change_password.html" method="GET">
+            <button type="submit">Change Admin Password</button>
+        </form>
+    </div>
+</body>
+</html>

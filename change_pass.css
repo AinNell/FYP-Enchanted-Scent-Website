@@ -1,0 +1,107 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f1e1; /* Light Brown Background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: linear-gradient(to right, #cfa58d, #d8b89f); /* Gradient Background */
+    padding: 40px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+h2 {
+    color: #4f3b2f; /* Dark brown color */
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 16px;
+    color: #4f3b2f; /* Darker brown */
+    margin-bottom: 8px;
+    text-align: left;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 10px;
+}
+
+input[type="email"],
+input[type="password"] {
+    padding: 14px;
+    font-size: 16px;
+    border: 2px solid #d8b89f; /* Light brown border */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #f1e6d4; /* Light cream background */
+    transition: all 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #cfa58d; /* Darker brown on focus */
+    background-color: #fff; /* White background on focus */
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #4f3b2f; /* Dark brown button */
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #6e4b33; /* Darker brown on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.password-links {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.password-links a {
+    color: #4f3b2f; /* Dark brown text for links */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.password-links a:hover {
+    text-decoration: underline;
+    color: #6e4b33; /* Darker brown on hover */
+}
