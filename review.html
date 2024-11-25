@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfume Review Form</title>
+    <link rel="stylesheet" href="review.css">
+    <script>
+        function updatePerfumes() {
+            var brand = document.getElementById('brand_name').value;
+            var perfumeSelect = document.getElementById('perfume_name');
+            perfumeSelect.innerHTML = ""; // Clear previous options
+
+            var perfumes = [];
+
+            // Define perfume lists based on brand selection
+            if (brand === "Rirana Perfume") {
+                perfumes = [
+                    "Roasted Chestnut", "Black Wood", "Vanilla Tobacco", "Spices Oud", "Honey Amber",
+                    "Iris Ambrette", "Oriental Orchid", "Salty Citrus", "Plum Rose", "Wood Cereal",
+                    "Coconut Nanas", "Cherry on Top", "Tonka Nutmeg", "Herb & Wood", "Vanilla Tea",
+                    "Apple Nanas", "Mawar Cashmere", "Golden Saffron", "Raspberry Lychee"
+                ];
+            } else if (brand === "Malay Perfumery") {
+                perfumes = [
+                    "Fatimah", "Fleur de Rampai", "Hang Li Po", "Kesidang", "Mahsuri 2024", "Melur",
+                    "Merong Mahawangsa", "Santubong", "Shahada", "Teja", "Winstedt", "Zheng He 2024"
+                ];
+            } else if (brand === "Medin Fragrance") {
+                perfumes = [
+                    "Srikandi Kesuma", "Srikandi Nona", "Srikandi Masmera", "Srikandi Purnama",
+                    "Srikandi Tun Teja", "Srikandi Kirana"
+                ];
+            } else if (brand === "Marina Rituals") {
+                perfumes = [
+                    "Fuji Apple", "Blanc Fairy", "Vanilla Chocolate", "Femme Fatale", "Kohi Vanilla",
+                    "Melon + Amber", "Pink + Champagne", "Nasty Gourmand", "God of Gourmand", "Apple + Whipped Cream",
+                    "Mojito Sunset Tea", "Mango Ice", "Raspberry + Sugarcake", "Sea + Salt Bergamot", 
+                    "Bad Boy Oud", "Wabi Sabi", "Midnight Kiss in Paris"
+                ];
+            }
+
+            // Populate the perfume dropdown with options
+            for (var i = 0; i < perfumes.length; i++) {
+                var option = document.createElement('option');
+                option.value = perfumes[i];
+                option.textContent = perfumes[i];
+                perfumeSelect.appendChild(option);
+            }
+        }
+
+        // Function to handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // You can process form data here (e.g., using AJAX) or display an alert
+            alert("Form submitted successfully!");
+        }
+    </script>
+</head>
+
+
+<body>
+    <div class="container">
+        <h1>Perfume Review</h1>
+        <form action="review.php" method="POST">
+
+            <!-- Student Name -->
+            <label for="student_name">Your Name:</label>
+            <input type="text" name="student_name" id="student_name" required>
+
+            <!-- Brand Selection -->
+            <label for="brand_name">Select Brand:</label>
+            <select name="brand_name" id="brand_name" required onchange="updatePerfumes()">
+                <option value="Rirana Perfume">Rirana Perfume</option>
+                <option value="Malay Perfumery">Malay Perfumery</option>
+                <option value="Medin Fragrance">Medin Fragrance</option>
+                <option value="Marina Rituals">Marina Rituals</option>
+            </select>
+
+            <!-- Perfume Selection -->
+            <label for="perfume_name">Select Perfume:</label>
+            <select name="perfume_name" id="perfume_name" required>
+                <!-- Perfumes will be populated dynamically based on brand -->
+            </select>
+
+            <!-- Rating Selection -->
+            <label for="rating">Rating:</label>
+            <div class="rating">
+                <input type="radio" name="rating" value="1" id="rating1" required>
+                <label for="rating1">1</label>
+                <input type="radio" name="rating" value="2" id="rating2">
+                <label for="rating2">2</label>
+                <input type="radio" name="rating" value="3" id="rating3">
+                <label for="rating3">3</label>
+                <input type="radio" name="rating" value="4" id="rating4">
+                <label for="rating4">4</label>
+                <input type="radio" name="rating" value="5" id="rating5">
+                <label for="rating5">5</label>
+            </div>
+
+            <!-- Review Text -->
+            <label for="review">Your Review:</label>
+            <textarea name="review" id="review" rows="4" required></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Review</button>
+        </form>
+    </div>
+
+    <script>
+        // Initialize the perfumes based on the default selected brand
+        updatePerfumes();
+    </script>
+    </div>
+</body>
+</html>

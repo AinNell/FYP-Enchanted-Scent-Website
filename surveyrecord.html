@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Records</title>
+    <link rel="stylesheet" href="surveyrecord.css"> 
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <h1>Survey Records</h1>
+</header>
+
+<!-- Container for Search Bar and Search Button -->
+<div class="container">
+
+    <!-- Search Form -->
+    <form action="surveyrecord.php" method="GET">
+        <input type="text" name="search" class="search-bar" placeholder="Search by name or email..." required>
+        <button type="submit" class="search-button">Search</button>
+    </form>
+
+    <!-- Survey Data Table -->
+    <?php
+        if (isset($_GET['search'])) {
+            $searchTerm = $_GET['search'];
+
+            // Database connection
+            $servername = "localhost";
+            $dbusername = "root";
+            $dbpassword = "";
+            $dbname = "ec";
+
+            $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
+
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            // Query to search for the survey records
+            $sql = "SELECT * FROM survey WHERE student_name LIKE ? OR email LIKE ?";
+            $stmt = $conn->prepare($sql);
+            $searchTermWildcard = "%" . $searchTerm . "%";
+            $stmt->bind_param("ss", $searchTermWildcard, $searchTermWildcard);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result->num_rows > 0) {
+                echo '<table class="survey-table">
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Student Name</th>
+                                <th>Email</th>
+                                <th>Gender</th>
+                                <th>Scents</th>
+                                <th>Preferences</th>
+                                <th>Local Brands</th>
+                                <th>Additional Brands</th>
+                                <th>Submission Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+
+                // Display each record
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr>
+                            <td>" . $row['student_id'] . "</td>
+                            <td>" . $row['student_name'] . "</td>
+                            <td>" . $row['email'] . "</td>
+                            <td>" . $row['gender'] . "</td>
+                            <td>" . $row['scents'] . "</td>
+                            <td>" . $row['preferences'] . "</td>
+                            <td>" . $row['localBrands'] . "</td>
+                            <td>" . $row['additionalBrands'] . "</td>
+                            <td>" . $row['submission_date'] . "</td>
+                        </tr>";
+                }
+                echo '</tbody></table>';
+            } else {
+                echo "<p>No results found.</p>";
+            }
+
+            $stmt->close();
+            $conn->close();
+        }
+    ?>
+
+</div>
+
+<div class="password-links">
+    <a href="adminmenu.html">Back to Menu</a>
+</div>
+</div>
+
+</body>
+</html>

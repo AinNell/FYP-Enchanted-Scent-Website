@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enchanted Scents - Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4e1c1; /* Light brown background */
+            margin: 0;
+            padding: 0;
+        }
+
+        .survey-container {
+            width: 60%; /* Reduced width */
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            color: #8B4513; /* Brown color for header */
+            font-size: 24px; /* Smaller font size for the title */
+        }
+
+        p {
+            text-align: center;
+            font-size: 16px; /* Smaller font size */
+            color: #8B4513; /* Brown color for text */
+            margin-bottom: 20px;
+        }
+
+        .form-page {
+            display: none;
+            margin-bottom: 20px;
+        }
+
+        .form-page:first-child {
+            display: block;
+        }
+
+        .form-page label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px; /* Slightly smaller font for labels */
+            color: #8B4513;
+        }
+
+        .form-page input[type="text"],
+        .form-page input[type="email"],
+        .form-page select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px; /* Reduced margin */
+            border: 1px solid #8B4513; /* Brown border */
+            border-radius: 4px;
+            font-size: 14px; /* Reduced font size */
+        }
+
+        .form-page button {
+            padding: 8px 16px;
+            background-color: #8B4513; /* Brown button color */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px; /* Smaller font size for button */
+        }
+
+        .form-page button:hover {
+            background-color: #6f3414; /* Darker brown on hover */
+        }
+
+        .survey-wrapper {
+            margin-bottom: 15px; /* Reduced margin */
+        }
+
+        .preferences-table, .brand-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px; /* Smaller font size for table content */
+        }
+
+        .preferences-table th, .preferences-table td,
+        .brand-table th, .brand-table td {
+            padding: 8px; /* Reduced padding */
+            border: 1px solid #8B4513; /* Brown border for tables */
+            text-align: left;
+        }
+
+        .brand-logo {
+            width: 80px; /* Reduced logo size */
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .survey-wrapper img {
+            width: 150px; /* Adjusted image size */
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        /* Additional styling for checkbox rows */
+        .preferences-table td {
+            background-color: #f4e1c1; /* Light brown background for checkbox rows */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="survey-container">
+        <h1>Enchanted Scents Survey</h1>
+        <p>Help us understand your preferences to better recommend scents for you!</p>
+
+        <!-- Survey Form -->
+        <form action="survey.php" method="POST">
+            
+            <!-- Page 1: Personal Details -->
+            <div class="form-page" id="page1">
+                <label for="student_id">Student ID:</label>
+                <input type="text" id="student_id" name="student_id" required>
+
+                <label for="name">Name:</label>
+                <input type="text" id="student_name" name="student_name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <button type="button" onclick="showNextPage(2)">Next</button>
+            </div>
+
+            <!-- Page 2: Scents Preferences -->
+            <div class="form-page" id="page2" style="display: none;">
+                <label>Which scents do you prefer? (Select all that apply)</label>
+                <div class="survey-wrapper">
+                    
+                    <table class="preferences-table">
+                        <thead>
+                            <tr>
+                                <th>Scent</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" id="floral" name="scents[]" value="Floral">
+                                    <label for="floral">Floral</label>
+                                </td>
+                                <td>Scents of flowers like roses, jasmine, and lilies.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" id="oriental" name="scents[]" value="Oriental">
+                                    <label for="oriental">Oriental</label>
+                                </td>
+                                <td>Warm and spicy notes like vanilla, amber, and musk.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" id="fresh" name="scents[]" value="Fresh">
+                                    <label for="fresh">Fresh</label>
+                                </td>
+                                <td>Crisp and clean notes like cucumber, mint, and ocean breeze.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" id="woody" name="scents[]" value="Woody">
+                                    <label for="woody">Woody</label>
+                                </td>
+                                <td>Earthy and rich notes like sandalwood, cedar, and vetiver.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" onclick="showNextPage(3)">Next</button>
+            </div>
+
+            <!-- Page 3: Local Brand Preferences -->
+            <div class="form-page" id="page3" style="display: none;">
+                <label>Which local brands are you familiar with?</label>
+                <table class="brand-table">
+                    <tr>
+                        <td>
+                            <img src="malaypefumerylogo.jpeg" alt="Malay Perfumery Logo" class="brand-logo">
+                            <input type="checkbox" id="MalayPerfumery" name="localBrands[]" value="MalayPerfumery">
+                            <label for="MalayPerfumery">Malay Perfumery</label>
+                        </td>
+                        <td>
+                            <img src="medinlogo.png" alt="Medin Fragrance Logo" class="brand-logo">
+                            <input type="checkbox" id="MedinFragrance" name="localBrands[]" value="MedinFragrance">
+                            <label for="MedinFragrance">Medin Fragrance</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="riranalogo.jpg" alt="Rirana Perfume Logo" class="brand-logo">
+                            <input type="checkbox" id="RiranaPerfume" name="localBrands[]" value="RiranaPerfume">
+                            <label for="RiranaPerfume">Rirana Perfume</label>
+                        </td>
+                        <td>
+                            <img src="marinalogo.jpeg" alt="Marina Rituals" class="brand-logo">
+                            <input type="checkbox" id="MarinaRituals" name="localBrands[]" value="MarinaRituals">
+                            <label for="MarinaRituals">Marina Rituals</label>
+                        </td>
+                    </tr>
+                </table>
+                <button type="button" onclick="showNextPage(4)">Next</button>
+            </div>
+
+            <!-- Page 4: Additional Preferences -->
+            <div class="form-page" id="page4" style="display: none;">
+                <label>Any additional brands or scents you like?</label>
+                <input type="text" name="additionalBrands" placeholder="Your favorite brands or scents">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- JavaScript for Page Navigation and Popup -->
+    <script>
+        function showNextPage(pageNumber) {
+            document.querySelectorAll('.form-page').forEach(function(page) {
+                page.style.display = 'none';
+            });
+            document.getElementById('page' + pageNumber).style.display = 'block';
+        }
+
+        function showPopup() {
+            if (window.location.search.includes('status=success')) {
+        alert("Successfully submitted your survey. Thank you for supporting us!");
+            }
+        }
+    </script>
+
+</body>
+</html>

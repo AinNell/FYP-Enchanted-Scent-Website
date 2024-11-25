@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Perfume</title>
+    <link rel="stylesheet" href="searchperfume.css">
+</head>
+<body>
+    <header>
+        <h1>Search Perfume</h1>
+    </header>
+
+    <div class="search-container">
+        <form action="searchresult.php" method="POST">
+            <label for="search_name">Perfume Name:</label>
+            <input type="text" id="search-name" name="search_name" placeholder="Enter perfume name...">
+
+            <label for="search-brand">Brand:</label>
+            <select id="search-brand" name="search_brand">
+                <option value="">-- Select Brand --</option>
+                <option value="Rirana Parfume">Rirana Parfume</option>
+                <option value="Malay Perfumery">Malay Perfumery</option>
+                <option value="Medin Fragrance">Medin Fragrance</option>
+                <option value="Marina Rituals">Marina Rituals</option>
+            </select>
+
+            <button type="submit">Search</button>
+
+            <div class="password-links">
+                <a href="adminmenu.html">Back to Menu</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

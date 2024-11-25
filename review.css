@@ -1,0 +1,177 @@
+/* review.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(145deg, #d1a151, #f2d1b3); /* Light brown gradient */
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s ease infinite; /* Gradient animation */
+}
+
+.container {
+    width: 100%;
+    max-width: 600px; /* Increased width for more space */
+    padding: 25px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    animation: bounceIn 1s ease-out;
+    overflow-y: auto; /* Enables scroll inside the container */
+    max-height: 80vh; /* Limits height to 80% of the viewport height */
+}
+
+h1 {
+    text-align: center;
+    color: #4f4f4f;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-size: 1.1rem;
+    color: #3e3e3e;
+    font-weight: bold;
+}
+
+input[type="text"], select, textarea {
+    padding: 10px;
+    border: 2px solid #d1a151;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus, select:focus, textarea:focus {
+    border-color: #f2d1b3;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    background: linear-gradient(145deg, #f2d1b3, #d1a151); /* Gradient button */
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background: linear-gradient(145deg, #d1a151, #f2d1b3);
+    transform: scale(1.05); /* Slightly scale the button */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    background: linear-gradient(145deg, #f2d1b3, #d1a151);
+    transform: scale(0.98);
+}
+
+/* Rating Section */
+.rating {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    font-size: 1.3rem;
+    color: #d1a151;
+}
+
+.rating input[type="radio"] {
+    display: none;
+}
+
+.rating label {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.rating label:hover, .rating input[type="radio"]:checked ~ label {
+    transform: scale(1.2);
+}
+
+.rating label:hover, .rating input[type="radio"]:checked ~ label {
+    color: #f2d1b3;
+}
+
+/* Review Textarea */
+textarea {
+    resize: vertical;
+    padding: 10px;
+    border: 2px solid #d1a151;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+/* Animation Keyframes */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    input[type="text"], select, textarea {
+        font-size: 1rem;
+    }
+}

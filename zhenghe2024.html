@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfume - Zheng He 2024</title>
+    <link rel="stylesheet" href="perfumepage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Main Form Box -->
+    <div class="form-box">
+
+        <!-- Header Section -->
+        <header class="header">
+            <button class="menu-btn" onclick="window.location.href='ecmenu.html'">MENU</button>
+
+            <!-- User Manual Button -->
+            <div class="header-left">
+                <div class="user-manual">
+                    <button id="openManualBtn">User Manual</button>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <h1 class="header-title">Enchanted Scents</h1>
+            </div>
+        </header>
+
+        <!-- User Manual Modal -->
+        <div id="userManualModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeModalBtn">&times;</span>
+                <h2>User Manual</h2>
+                <div class="modal-body">
+                    <h3>PERFUME PAGE</h3>
+                    <ul>
+                        <li>In this page, it will state the perfume information for you to learn.</li>
+                        <li>If you want to go to the menu page, you can CLICK on the MENU at the top left corner.</li>
+                        <li>If you scroll down, you will see other perfumes from the same brand.</li>
+                    </ul>
+                    <h3>Hope you will get fun information about the perfume!</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Perfume Details Section -->
+        <div class="perfume-container">
+            <div class="perfume-image">
+                <img src="zhenghe2024.png" alt="Zheng He 2024 Perfume">
+            </div>
+            <div class="perfume-details">
+                <h2>Zheng He 2024</h2>
+                <p class="quantity">| 15ML |</p>
+                <div class="fav-button">
+                    <button class="fav-button" onclick="addToFavourite('Zheng He 2024', 'zhenghe2024.png')">♡ Add to Favourite</button>
+                </div>
+                <h3>Description</h3>
+                <p class="description">
+                    One fine day late in the 14th century, on the banks of the Malacca river mouth, the water rippled turbulently. Usually, it heralded the arrival of a ship into port, and at first the Shahbandar continued working in his office, barely looking down the hill towards sea. Then the hubbub of the famous entrepôt suddenly hushed as a huge armada appeared on the horizon. Large ships darkened the line where the straits of Malacca sea met the sky, and the Shahbandar stood up, agape at the sight before his eyes as far as he could see. 
+                    <br><br>
+                    A dinghy rowed towards the jetty, carrying an imposing man who stood upright, his armour glistening in the sun. His demeanor was one of firm resolve, yet open. The wind carried his scent to the waiting crowd, an unmistakeable fragrance of imposing power. He was Admiral Zheng He, the envoy of the Emperor of China sent to Malacca to meet the Sultan. Admiral Zheng He and his entourage were received warmly by the Sultan who welcomed diplomatic ties with the great power that is China. This is the beginning of close ties between two nations that has continued for centuries until today.
+                    <br><br>
+                    Zheng He Parfum pays tribute to this remarkable relations in spite of time’s ebbs and flows.
+                </p>
+                <h3>Notes</h3>
+                <p class="notes">
+                    Benzoin, Sandalwood, Camphor, Ylang Ylang, Bergamot, Pineapple, Sea accord.
+                </p>
+                <h3>Information</h3>
+                <p class="notes">
+                    This perfume is a China Exclusive. Only available to purchase from malay perfumery exclusive China agent (https://www.instagram.com/fortunesoulofficial/)
+                </p>
+
+            </div>
+        </div>
+
+        <!-- "You May Also Like" Section -->
+        <section class="suggestions">
+            <h2>MALAY PERFUMERY</h2>
+            <div class="carousel-box">
+                <button class="carousel-control prev" onclick="moveCarousel(-1)">&#10094;</button>
+                <button class="carousel-control next" onclick="moveCarousel(+1)">&#10095;</button>
+                <div class="carousel">
+                    <div class="carousel-item" onclick="window.location.href='fatimah.html'">
+                        <img src="fatimah.png" alt="fatimah">
+                        <p>Fatimah</p>
+                    </div>
+                    <div class="carousel-item" onclick="window.location.href='fleurderampai.html'">
+                        <img src="fleurderampai.png" alt="fleurderampai">
+                        <p>Fleur de Rampai</p>
+                    </div>
+                    <div class="carousel-item" onclick="window.location.href='hanglipo.html'">
+                        <img src="hanglipo.png" alt="hanglipo">
+                        <p>Hang Li Po</p>
+                    </div>
+                    <div class="carousel-item" onclick="window.location.href='kesidang.html'">
+                        <img src="kesidang.png" alt="kesidang">
+                        <p>Kesidang</p>
+                    </div>
+                    <div class="carousel-item" onclick="window.location.href='mahsuri2024.html'">
+                        <img src="mahsuri2024.png" alt="mahsuri2024">
+                        <p>Mahsuri 2024</p>
+                    </div>
+                    <div class="carousel-item" onclick="window.location.href='melur.html'">
+                        <img src="melur.png" alt="melur">
+                        <p>Melur</p>
+                    </div>
+                    <div class="carousel-item" onclick="window.location.href='merongmahawangsa.html'">
+                        <img src="merongmahawangsa.png" alt="merongmahawangsa">
+                        <p>Merong Mahawangsa</p>
+                    </div>
+                    <div class="carousel-item" onclick="window.location.href='santubong.html'">
+                        <img src="santubong.png" alt="Santubong">
+                        <p>Santubong</p>
+                    </div>
+                    <div class="carousel-item" onclick="window.location.href='shahada.html'">
+                        <img src="shahada.png" alt="shahada">
+                        <p>Shahada</p>
+                    </div>
+                    <div class="carousel-item" onclick="window.location.href='teja.html'">
+                        <img src="teja.png" alt="teja">
+                        <p>Teja</p>
+                    </div>
+                    <div class="carousel-item" onclick="window.location.href='winstedt.html'">
+                        <img src="winstedt.png" alt="Winstedt">
+                        <p>Winstedt</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+
+    <script>
+        let carouselIndex = 0;
+
+        function moveCarousel(direction) {
+            const items = document.querySelector('.carousel');
+            const totalItems = items.children.length;
+            const itemWidth = items.children[0].offsetWidth;
+            carouselIndex += direction;
+
+            if (carouselIndex < 0) {
+                carouselIndex = totalItems - 1;
+            } else if (carouselIndex >= totalItems) {
+                carouselIndex = 0;
+            }
+
+            items.style.transform = `translateX(${-carouselIndex * itemWidth}px)`;
+
+            // Update active carousel item
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            carouselItems.forEach(item => item.classList.remove('active'));
+            carouselItems[carouselIndex].classList.add('active');
+        }
+
+        // User Manual Modal functionality
+        const modal = document.getElementById("userManualModal");
+        const openManualBtn = document.getElementById("openManualBtn");
+        const closeModalBtn = document.getElementById("closeModalBtn");
+
+        openManualBtn.onclick = function() {
+            modal.style.display = "block"; // Show the modal
+        }
+
+        closeModalBtn.onclick = function() {
+            modal.style.display = "none"; // Hide the modal
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none"; // Close if clicked outside the modal
+            }
+        }
+
+        // Close modal with Escape key
+        window.onkeydown = function(event) {
+            if (event.key === "Escape") {
+                modal.style.display = "none";
+            }
+        }
+        function addToFavourite( perfumeName, perfumeImage ) {
+    // Get the current favourites from local storage
+    let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+
+    // Create an object for the current perfume
+    let perfume = {
+        name: perfumeName,
+        image: perfumeImage
+    };
+
+    // Check if the perfume is already in the favourites
+    if (!favourites.some(fav => fav.name === perfumeName)) {
+        favourites.push(perfume);  // Add the perfume if it's not already in the list
+    }
+
+    // Save the updated favourites list to local storage
+    localStorage.setItem("favourites", JSON.stringify(favourites));
+
+    alert(perfumeName + " added to favourites!");  // Optional: Show a confirmation
+    }
+
+    </script>
+
+</body>
+</html>

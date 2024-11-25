@@ -1,0 +1,178 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f1eb; /* Light brown background */
+    color: #3e3e3e; /* Dark brown text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('background-image.jpeg'); /* Optional: Add a background image */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Survey Container */
+.survey-container {
+    background-color: rgba(255, 255, 255, 0.9); /* White with a hint of transparency */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+    border: 2px solid #d8b7a6; /* Light brown border */
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #8e735b; /* Medium brown for the heading */
+    font-weight: bold;
+}
+
+p {
+    font-size: 18px;
+    color: #7a4a3a; /* Darker brown for subheadings */
+    margin-bottom: 25px;
+}
+
+/* Form Page */
+.form-page {
+    display: none;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="checkbox"] {
+    margin: 10px 0;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #d8b7a6; /* Light brown border for inputs */
+    font-size: 16px;
+    background-color: #f9f1e7; /* Very light brown background for inputs */
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Select Field */
+select {
+    margin: 10px 0;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #d8b7a6;
+    font-size: 16px;
+    background-color: #f9f1e7;
+}
+
+/* Buttons */
+button {
+    background-color: #8e735b; /* Medium brown button */
+    color: white;
+    padding: 15px 40px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #6f4f30; /* Dark brown on hover */
+}
+
+/* Image and Table Styling */
+.survey-wrapper {
+    margin-top: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #8e735b; /* Medium brown for table headers */
+    color: white;
+    font-size: 18px;
+}
+
+td {
+    background-color: #f9f1e7; /* Light brown background for table rows */
+    font-size: 16px;
+}
+
+td input[type="checkbox"] {
+    width: auto;
+}
+
+/* Brand Table */
+.brand-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.brand-table td {
+    padding: 15px;
+    text-align: center;
+}
+
+.brand-table .brand-logo {
+    max-width: 80px;
+    margin-bottom: 10px;
+}
+
+/* Final Page Input */
+input[type="text"] {
+    width: 60%;
+    margin: 10px auto;
+    border-radius: 5px;
+    background-color: #f9f1e7;
+    border: 1px solid #d8b7a6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .survey-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select {
+        width: 90%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
